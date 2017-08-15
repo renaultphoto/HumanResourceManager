@@ -77,7 +77,7 @@
         </div>
     </div>
     <div region="west" style="width: 200px; height: 500px;"
-        title="Navigation Menu" split="true">
+        title="日常管理" split="true">
         <div class="easyui-accordion">
             <div title="部门管理"
                 data-options="selected:true,iconCls:'icon-shujias'"
