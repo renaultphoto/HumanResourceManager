@@ -79,7 +79,7 @@
     <div region="west" style="width: 200px; height: 500px;"
         title="Navigation Menu" split="true">
         <div class="easyui-accordion">
-            <div title="Department Manage"
+            <div title="部门管理"
                 data-options="selected:true,iconCls:'icon-shujias'"
                 style="padding: 10px; height: 10px;">
                 <a href="javascript:openTab(' Department Info','deptManage.jsp')"
@@ -87,7 +87,7 @@
                     style="width: 150px;"> Department Info</a>
             </div>
 
-            <div title="Position Manage"
+            <div title="职位管理"
                 data-options="selected:true,iconCls:'icon-schoolceo'"
                 style="padding: 10px; height: 10px;">
                 <a href="javascript:openTab(' Position Info','positionManage.jsp')"
@@ -95,14 +95,14 @@
                     style="width: 150px;"> Position Info</a>
             </div>
 
-            <div title="Employee Manage" data-options="iconCls:'icon-students' "
+            <div title="员工管理" data-options="iconCls:'icon-students' "
                 style="padding: 10px">
                 <a href="javascript:openTab(' Employee Info','employeeManage.jsp')"
                     class="easyui-linkbutton" data-options="plain:true"
                     style="width: 150px;">Employee Info</a>
             </div>
 
-            <div title="Post Manage"
+            <div title="公告管理"
                 data-options="selected:true,iconCls:'icon-wenzhang'"
                 style="padding: 10px; height: 10px;">
                 <a href="javascript:openTab(' Post Info','postManage.jsp')"
@@ -110,7 +110,7 @@
                     style="width: 150px;"> Post Info</a>
             </div>
 
-            <div title="System Manage" data-options="iconCls:'icon-item'"
+            <div title="系统设置" data-options="iconCls:'icon-item'"
                 style="padding: 10px; border: none;">
                 <a
                     href="javascript:openTab(' Admin List','adminManage.jsp','icon-lxr')"
