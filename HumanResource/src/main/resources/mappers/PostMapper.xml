@@ -21,6 +21,9 @@
         <if test="title!=null and title!='' ">
             and p.title like #{title}
         </if>
+          limit 
+                     #{firstPage}, 
+                     #{rows}; 
     </select>
     <!-- 根据条件查询公告数量 -->
     <select id="getCount" parameterType="Map" resultType="Integer">

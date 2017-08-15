@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.renault.UtilPojo.PageBean;
 import com.renault.domain.Admin;
 import com.renault.domain.Post;
 import com.renault.service.PostService;
@@ -45,13 +46,21 @@ public class PostController {
     * @throws Exception
     */
     @RequestMapping("/list")
-    public String list(Post post, HttpServletResponse response)
+    public String list(@RequestParam(value="page", required=false) String page, 
+            @RequestParam(value="rows", required=false) String rows, Post post, HttpServletResponse response)
             throws Exception {
+    	
+    	PageBean pageBean = new PageBean(Integer.parseInt(page), Integer.parseInt(rows));
+    	
         Map<String, Object> map = new HashMap<String, Object>();
         // 判断查询条件是否为空，如果是，对条件做数据库模糊查询的处理
         if (post.getTitle() != null && !"".equals(post.getTitle().trim())) {
             map.put("title", "%" + post.getTitle() + "%");
+            
         }
+        map.put("firstPage", pageBean.getFirstPage());
+        map.put("rows", pageBean.getRows());
+        
         List<Post> postList = postService.findPosts(map);
         Integer total = postService.getCount(map);
 
@@ -64,6 +73,7 @@ public class PostController {
         JSONArray jsonArray = JSONArray.fromObject(postList, jsonConfig);
         result.put("rows", jsonArray);
         result.put("total", total);
+        System.out.println(total);
         ResponseUtil.write(response, result);
         return null;
     }

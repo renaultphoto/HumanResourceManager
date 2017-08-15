@@ -137,7 +137,7 @@
 
     function formatHref(val, row) {
         return "<a href='${pageContext.request.contextPath}/post/getById?id="
-                + row.id + "' target='_blank'>Show Content</a>";
+                + row.id + "' target='_blank'>预览内容</a>";
     }
 
     function resetValue() {
@@ -161,10 +161,10 @@
             <tr>
                 <th field="cb" checkbox="true" align="center"></th>
                 <th field="id" width="10%" align="center" hidden="true">id</th>
-                <th field="title" width="300" align="center">title</th>
+                <th field="title" width="500" align="center">title</th>
                 <th field="date" width="150" align="center">create_date</th>
                 <th field="admin.username" width="150" align="center">announcer</th>
-                <th field="content" width="150" align="center"
+                <th field="content" width="200" align="center"
                     formatter="formatHref">operation</th>
             </tr>
         </thead>
